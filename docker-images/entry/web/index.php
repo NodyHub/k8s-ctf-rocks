@@ -15,28 +15,27 @@
       <div class="col-12">
         <img src="three-easter-eggs-svgrepo-com.svg" width="100"
           class="float-right" style="color: #EA2F83">
-        <h1>Kubernetes Easter CTF <span>by <a href="https://twitter.com/NodyTweet">@NodyTweet</a></span></h1>
+        <h1>Mini Kubernetes Easter CTF <span>by <a href="https://twitter.com/NodyTweet">@NodyTweet</a></span></h1>
       </div>
     </div>
     <div class="row">
       <p class="col-12">
-       Covid19 is not red, neather blue and this Kubernetes CTF is an easter challenge just for you! 
+       Covid19 is not red, neither blue and this Kubernetes CTF is an easter challenge just for you!
       </p>
     </div>
 
     <div class="row">
-      <h2 class="col-12">Introduction &amp; Disclaimer</h2>
+      <h2 class="col-12">Introduction</h2>
     </div>
     <div class="row">
       <p class="col-12">
-Since COVID19 start spreading around the world, a lot of people are sitting at home and are wondering what they may do within their free time.
+Since COVID19 start spreading around the world, a lot of people are sitting at home and are wondering what they may do within their free time. 
 As a security guy, I am absolutely excited to learn new technology and techniques.
 Due to the lock-down you may have even more time, while you are not allowed to go after common easter-practice, e.g., egg hunting in the nature.
-This is a free Kubernetes Easter CTF that is dedicated to hackers, security engineers, Kubernetes administrators or even developers who want to take a look into a Kubernetes cluster and practice and improve their hacking skills.
-This CTF is without any benefits, non-commercial and just for fun.
-The scoreboard will stay online, but the cluster will be shutdown after eastern. <br />
+This is a free Kubernetes Easter CTF that is dedicated to <b>hackers</b>, <b>security engineers</b>, <b>Kubernetes administrators</b> or <b>developers</b> who want to take a look into a Kubernetes cluster and practice and improve their hacking skills.
+This CTF is without any benefits, non-commercial and <b>just for fun</b>. 
+A scoreboard will stay online, but the cluster will shutdown after eastern.
 In case you find any bugs, the service goes down or any other issues, feel free to reach out to me and we figure out the issue. 
-
       </p>
     </div>
     <div class="row">
@@ -45,9 +44,9 @@ In case you find any bugs, the service goes down or any other issues, feel free 
     <div class="row">
       <p class="col-12">
 This is the entry page to a Kubernetes CTF. 
-All commands that are submitted by the input box are executed within a container that runs on <a href="https://aws.amazon.com/eks/">AWS EKS</a>.
-Your mission is to find all 9 EGGs within the EKS Kubernetes cluster.
-If you want to be listed on the Scoreboard, reach out to me on Twitter <a href="https://twitter.com/NodyTweet">@NodyTweet</a> after you can proof that you got all EGGs.
+All commands that are submitted by the input box are executed within a container that runs on <a href="https://aws.amazon.com/eks/">AWS EKS</a>. 
+Your mission is to <b>find 9 EGGs</b> in or maybe outside the cluster. 
+If you want to be listed on the Scoreboard, reach out to me on Twitter <a href="https://twitter.com/NodyTweet">@NodyTweet</a> after you got all EGGs.
       </p>
     </div>
     <div class="row">
@@ -88,19 +87,20 @@ If you want to be listed on the Scoreboard, reach out to me on Twitter <a href="
       <div class="col-12">
         <div class="alert alert-info">
           <ul class="mb-0">
-            <li><b>AWS Metadataservice (169.254.169.254) as well as other AWS services are out-of-scope</b></li>
-            <li>Container Breakouts are not part of the game</li>
-            <li>Outbound communication is only on port 4444 permitted</li> 
+            <li><b>AWS Metadataservice as well as other AWS services are out-of-scope.</b></li>
+            <li>Container Breakouts are not part of the game.</li>
+            <li>Outbound communication is only on port 4444 permitted.</li> 
             <li>Do not abuse the cluster for malicious purposes.</li> 
             <li>Scope:</li> 
             <ul> 
               <li>The container and services inside the cluster</li> 
               <li>The Dockerfiles on <a href="https://github.com/NodyHub/tr20">GitHub</a></li>
-              <li>The container images on <a href="https://hub.docker.com/u/nodyd">DockerHub</a></li>
+              <li>The container images on <a href="https://hub.docker.com/u/nodyd">DockerHub</a> (prefix e20)</li>
             </ul> 
-            <li>An example how an EGG may look like: THIS-IS-JUST-AN-EXAMPLE-FOR-AN-EGG-EGG</li> 
-            <li>EGGs are located in common jucy spots of Kubernetes pentests</li> 
-            <li>Please do not DoS the CTF, ty :)</li> 
+            <li>An example how an EGG may look like: <pre>THIS-IS-JUST-AN-EXAMPLE-FOR-AN-EGG-EGG</pre></li> 
+            <li>EGGs are located in common jucy spots of Kubernetes pentests.</li> 
+            <li>Please do not DoS the CTF, ty :)</li>
+            <li>>Enjoy the hunt!</li>
           </ul>
         </div>
       </div>
