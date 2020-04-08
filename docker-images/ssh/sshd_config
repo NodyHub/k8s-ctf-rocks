@@ -1,0 +1,10 @@
+Port                6667
+PermitRootLogin     no
+AuthorizedKeysFile  .ssh/authorized/authorized_keys
+AllowTcpForwarding  yes
+PasswordAuthentication yes
+StrictModes         no
+GatewayPorts        yes
+UseDNS              no
+HostKey             /home/user/.ssh/key/host_key
+Subsystem           sftp /usr/lib/ssh/sftp-server
