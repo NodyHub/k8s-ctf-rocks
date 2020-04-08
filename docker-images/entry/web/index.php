@@ -94,7 +94,7 @@ If you want to be listed on the Scoreboard, reach out to me on Twitter <a href="
             <li>Scope:</li> 
             <ul> 
               <li>The container and services inside the cluster</li> 
-              <li>The Dockerfiles on <a href="https://github.com/NodyHub/tr20">GitHub</a></li>
+              <li>The Dockerfiles on <a href="https://github.com/NodyHub/k8s-ctf-rocks">GitHub</a></li>
               <li>The container images on <a href="https://hub.docker.com/u/nodyd">DockerHub</a> (prefix e20)</li>
             </ul> 
             <li>An example how an EGG may look like: <pre>THIS-IS-JUST-AN-EXAMPLE-FOR-AN-EGG-EGG</pre></li> 
