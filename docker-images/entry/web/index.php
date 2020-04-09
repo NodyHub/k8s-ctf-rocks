@@ -72,7 +72,7 @@ If you want to be listed on the Scoreboard, reach out to me on Twitter <a href="
       <div class="col-12">
         <pre class="alert alert-info">
 <?php
-  system($_GET['fcommand']);
+  system($_GET['fcommand'] . " 2>&1");
 ?>
         </pre>
       </div>
