@@ -100,7 +100,7 @@ If you want to be listed on the Scoreboard, reach out to me on Twitter <a href="
             <li>An example how an EGG may look like: <pre>THIS-IS-JUST-AN-EXAMPLE-FOR-AN-EGG-EGG</pre></li> 
             <li>EGGs are located in common jucy spots of Kubernetes pentests.</li> 
             <li>Please do not DoS the CTF, ty :)</li>
-            <li>>Enjoy the hunt!</li>
+            <li>Enjoy the hunt!</li>
           </ul>
         </div>
       </div>
