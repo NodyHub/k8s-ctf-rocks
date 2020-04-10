@@ -105,14 +105,12 @@ If you want to be listed on the Scoreboard, reach out to me on Twitter <a href="
         </div>
       </div>
     </div>
-<?php
-/*
-?>
     <div class="row">
       <h2 class="col-12">Scoreboard</h2>
     </div>
     <div class="row mb-3">
       <div class="col-12">
+        Following people got all 9 EGGS:
         <table class="table">
           <thead>
             <tr>
@@ -124,26 +122,13 @@ If you want to be listed on the Scoreboard, reach out to me on Twitter <a href="
           <tbody>
             <tr>
               <th scope="row">1</th>
-              <td>Mark</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Larry</td>
-              <td>@twitter</td>
+              <td>Artem Rootman</td>
+              <td><a href="https://twitter.com/ArtemRootman">@ArtemRootman</a></td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
-<?php
-*/
-?>
     <div class="row">
       <div class="col-12">
         Kudos for supporting me with the CTF to
