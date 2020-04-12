@@ -125,6 +125,26 @@ If you want to be listed on the Scoreboard, reach out to me on Twitter <a href="
               <td>Artem Rootman</td>
               <td><a href="https://twitter.com/ArtemRootman">@ArtemRootman</a></td>
             </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Daniel</td>
+              <td><a href="https://twitter.com/22dh22">@22dh22</a></td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Yuval Kohavi</td>
+              <td><a href="https://twitter.com/KohaviYuval">@KohaviYuval</a></td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>0x07027</td>
+              <td><a href="https://twitter.com/0x07027">0x07027</a></td>
+            </tr>
+            <tr>
+              <th scope="row">5</th>
+              <td>Michael Shen</td>
+              <td><a href="https://twitter.com/faiyafrower">@faiyafrower</a></td>
+            </tr>
           </tbody>
         </table>
       </div>
