@@ -1,0 +1,155 @@
+<html>
+
+<head>
+  <title>Kubernetes Easter CTF</title>
+  <link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <link href="hacker.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <div class="mt-3 row">
+      <div class="col-12">
+        <img src="three-easter-eggs-svgrepo-com.svg" width="100"
+          class="float-right" style="color: #EA2F83">
+        <h1>Mini Kubernetes Easter CTF <span>by <a href="https://twitter.com/NodyTweet">@NodyTweet</a></span></h1>
+      </div>
+    </div>
+    <div class="row">
+      <p class="col-12">
+        Thanks to everyone who participated within the CTF. 
+        Eastern 2020 is over and so that is also the end of the game.
+        It was a lot of fun to see people approaching the Kubernetes cluster and I learned a lot from you.
+      </p>
+      <p class="col-12">
+        Stay safe and home during these terrible times and wish you all the best!
+      </p>
+    </div>
+
+    <div class="row">
+      <h2 class="col-12">Scoreboard</h2>
+    </div>
+    <div class="row mb-3">
+      <div class="col-12">
+        Following people got all 9 EGGS:
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Handle</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Artem Rootman</td>
+              <td><a href="https://twitter.com/ArtemRootman">@ArtemRootman</a></td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Daniel</td>
+              <td><a href="https://twitter.com/22dh22">@22dh22</a></td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Yuval Kohavi</td>
+              <td><a href="https://twitter.com/KohaviYuval">@KohaviYuval</a></td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>0x07027</td>
+              <td><a href="https://twitter.com/0x07027">@0x07027</a></td>
+            </tr>
+            <tr>
+              <th scope="row">5</th>
+              <td>Michael Shen</td>
+              <td><a href="https://twitter.com/faiyafrower">@faiyafrower</a></td>
+            </tr>
+            <tr>
+              <th scope="row">6</th>
+              <td>KiuBy</td>
+              <td><a href="https://twitter.com/Kiu_By">@Kiu_By</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="row">
+      <h2 class="col-12 gray">Introduction</h2>
+    </div>
+    <div class="row">
+      <p class="col-12 gray">
+Since COVID19 start spreading around the world, a lot of people are sitting at home and are wondering what they may do within their free time. 
+As a security guy, I am absolutely excited to learn new technology and techniques.
+Due to the lock-down you may have even more time, while you are not allowed to go after common easter-practice, e.g., egg hunting in the nature.
+This is a free Kubernetes Easter CTF that is dedicated to <b>hackers</b>, <b>security engineers</b>, <b>Kubernetes administrators</b> or <b>developers</b> who want to take a look into a Kubernetes cluster and practice and improve their hacking skills.
+This CTF is without any benefits, non-commercial and <b>just for fun</b>. 
+A scoreboard will stay online, but the cluster will shutdown after eastern.
+In case you find any bugs, the service goes down or any other issues, feel free to reach out to me and we figure out the issue. 
+      </p>
+    </div>
+    <div class="row">
+      <h2 class="col-12 gray">Mission // TL;DR</h2>
+    </div>
+    <div class="row">
+      <p class="col-12 gray">
+This is the entry page to a Kubernetes CTF. 
+All commands that are submitted by the input box are executed within a container that runs on <a href="https://aws.amazon.com/eks/">AWS EKS</a>. 
+Your mission is to <b>find 9 EGGs</b> in or maybe outside the cluster. 
+If you want to be listed on the Scoreboard, reach out to me on Twitter <a href="https://twitter.com/NodyTweet">@NodyTweet</a> after you got all EGGs.
+      </p>
+    </div>
+    <div class="row">
+      <h2 class="col-12 gray">Input</h2>
+    </div>
+    <form class="row">
+      <label class="col-3 col-form-label gray" for="fcommand">Command:</label>
+      <div class="input-group col-9">
+        <input class="form-control" type="text" id="fcommand" name="fcommand"
+          value="" disabled autofocus>
+        <div class="input-group-append">
+          <input class="btn btn-primary" type="submit" value="Submit" disabled>
+        </div>
+      </div>
+    </form>
+    <div class="row">
+      <h2 class="col-12 gray">Rules & Facts</h2>
+    </div>
+    <div class="row">
+      <div class="col-12 gray">
+        <div class="alert alert-info">
+          <ul class="mb-0 gray">
+            <li><b>AWS Metadataservice as well as other AWS services are out-of-scope.</b></li>
+            <li>Container Breakouts are not part of the game.</li>
+            <li>Outbound communication is only on port 4444 permitted.</li> 
+            <li>Do not abuse the cluster for malicious purposes.</li> 
+            <li>Scope:</li> 
+            <ul> 
+              <li>The container and services inside the cluster</li> 
+              <li>The Dockerfiles on <a href="https://github.com/NodyHub/k8s-ctf-rocks">GitHub</a></li>
+              <li>The container images on <a href="https://hub.docker.com/u/nodyd">DockerHub</a> (prefix e20)</li>
+            </ul> 
+            <li>An example how an EGG may look like: <pre class="gray">THIS-IS-JUST-AN-EXAMPLE-FOR-AN-EGG-EGG</pre></li> 
+            <li>EGGs are located in common jucy spots of Kubernetes pentests.</li> 
+            <li>Please do not DoS the CTF, ty :)</li>
+            <li>Enjoy the hunt!</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        Kudos for supporting me with the CTF to
+
+        <a href="https://twitter.com/jonas_plum">Jonas</a> &amp;
+        <a href="https://twitter.com/uchi_mata">Matthias</a>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
