@@ -138,12 +138,17 @@ If you want to be listed on the Scoreboard, reach out to me on Twitter <a href="
             <tr>
               <th scope="row">4</th>
               <td>0x07027</td>
-              <td><a href="https://twitter.com/0x07027">0x07027</a></td>
+              <td><a href="https://twitter.com/0x07027">@0x07027</a></td>
             </tr>
             <tr>
               <th scope="row">5</th>
               <td>Michael Shen</td>
               <td><a href="https://twitter.com/faiyafrower">@faiyafrower</a></td>
+            </tr>
+            <tr>
+              <th scope="row">6</th>
+              <td>KiuBy</td>
+              <td><a href="https://twitter.com/Kiu_By">@Kiu_By</a></td>
             </tr>
           </tbody>
         </table>
