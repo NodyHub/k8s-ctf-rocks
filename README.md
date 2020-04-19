@@ -6,7 +6,7 @@ These are all resource that are used to setup the Kubernetes Easter CTF. The CTF
 
 ## Setup with Vagrant
 
-To simplify the Installation, a Vagrant file supplied that bootstraps the CTF local on an Ubuntu VM + k3s
+To simplify the Installation, a [Vagrantfile](Vagrantfile) is supplied to bootstraps the CTF local on an Ubuntu VM + k3s
 
 You can start it with:
 ```bash
