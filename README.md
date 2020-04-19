@@ -10,7 +10,7 @@ To simplify the Installation, a Vagrant file supplied that bootstraps the CTF lo
 
 You can start it with:
 ```bash
-$ vagrant up
+vagrant up
 ```
 Even if the VM is started, the cluster needs some time to pull all images. The status of the deployment can be tested with following commands:
 ```bash
