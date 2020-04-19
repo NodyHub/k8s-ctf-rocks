@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "joker.fullname" . }}
+  namespace: {{ .Values.namespace | quote }}
+  labels:
+    {{- include "joker.labels" . | nindent 4 }}
+spec:
+  ports:
+    - port: 80
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "joker.selectorLabels" . | nindent 4 }}

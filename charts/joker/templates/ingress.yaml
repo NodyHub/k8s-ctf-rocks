@@ -1,0 +1,26 @@
+{{- $fullName := include "joker.fullname" . -}}
+apiVersion: networking.k8s.io/v1beta1
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: {{ $fullName }}
+  namespace: {{ .Values.namespace | quote }}
+  labels:
+    {{- include "joker.labels" . | nindent 4 }}
+spec:
+  rules:
+    - host: "joker"
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: {{ $fullName }}
+              servicePort: 80
+    - host: "joker.{{ .Values.dnsZone }}"
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: {{ $fullName }}
+              servicePort: 80
+            

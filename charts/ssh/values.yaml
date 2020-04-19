@@ -1,0 +1,41 @@
+replicaCount: 1
+
+autoscaling:                                                                                                                                                                                                                                  
+  enabled: true
+  minReplicas: 1
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 50
+  targetMemoryUtilizationPercentage: 50
+
+image:
+  repository: docker.io/nodyd/e20-ssh:latest
+  pullPolicy: Always
+
+resources:
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+
+securityContext: 
+  runAsUser: 1000
+  runAsGroup: 1000
+  readOnlyRootFilesystem: true
+  # capabilities:
+  #   drop:
+  #   - ALL
+
+podSecurityContext:
+  fsGroup: 1000
+
+ssh:
+  public_key: ""
+  
+egg:
+  env: ""
+
+namespace: "foo"
+
+

@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: "{{ .Chart.Name }}-ssh-key"
+  namespace: {{ .Values.namespace | quote }}
+  labels:
+    app: {{ template "entry.fullname" . }}
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Service }}"
+data:
+  private_key: {{ .Values.ssh.private_key | quote }}
+  public_key: {{ .Values.ssh.public_key | quote }}
+
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: "{{ .Chart.Name }}-config-egg"
+  namespace: {{ .Values.namespace | quote }}
+  labels:
+    app: {{ template "entry.fullname" . }}
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Service }}"
+data:
+  config.php: {{ printf "<?php /* $EGG=\"%s\"; */ ?>\n" .Values.egg.config | quote }}
+

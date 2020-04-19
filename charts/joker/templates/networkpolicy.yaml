@@ -1,0 +1,26 @@
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: {{ template "joker.fullname" . }}
+  namespace: {{ .Values.namespace | quote }}
+  labels:
+    app: {{ template "joker.name" . }}
+    chart: {{ template "joker.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  podSelector:
+    matchLabels:
+      app.kubernetes.io/name: {{ template "joker.name" . }}
+  policyTypes:
+    - Ingress
+  ingress:
+    - from:
+      - namespaceSelector:
+          matchLabels: {}
+        podSelector:
+          matchLabels:
+            app: traefik
+      ports:
+      - protocol: TCP
+        port: 8080

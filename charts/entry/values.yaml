@@ -1,0 +1,51 @@
+replicaCount: 1
+
+autoscaling:
+  enabled: true
+  minReplicas: 1
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 50
+  targetMemoryUtilizationPercentage: 50
+
+serviceAccount:                                                                                                                                                                                                                               
+  create: true
+  name: egg-thief
+
+image:
+  repository: docker.io/nodyd/e20-entry:latest
+  pullPolicy: Always
+
+nameOverride: "entry"
+fullnameOverride: "entry"
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+ssh:
+  private_key: ""
+  public_key: ""
+    
+egg:
+  config: "huiiiiiiiiiiiii"
+  secret: "44444444444"
+
+namespace: "foo"
+
+resources: 
+  limits:
+    cpu: 100m
+    memory: 256Mi
+  requests:
+    cpu: 100m
+    memory: 256Mi
+
+
+  

@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "ssh.fullname" . }}
+  namespace: {{ .Values.namespace | quote }}
+  labels:
+    {{- include "ssh.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "ssh.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "ssh.selectorLabels" . | nindent 8 }}
+    spec:
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: ssh
+              containerPort: 6667
+              protocol: TCP
+          volumeMounts:
+          - name: ssh-pub
+            mountPath: /home/user/.ssh/authorized
+            readOnly: true
+          - name: ssh-key
+            mountPath: /home/user/.ssh/key
+          envFrom:
+            - configMapRef:
+                name: "{{ .Chart.Name }}-egg"
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      volumes:
+        - name: ssh-pub
+          configMap:
+            name: "{{ .Chart.Name }}-authorized-keys"
+        - name: ssh-key
+          emptyDir: {}

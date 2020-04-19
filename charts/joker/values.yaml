@@ -1,0 +1,33 @@
+replicaCount: 1
+
+image:
+  repository: docker.io/nodyd/e20-egg:latest
+  pullPolicy: Always
+
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+dnsZone: "k8s.home"
+
+egg:
+  env: "11111111"
+
+namespace: "foo"
+
+
+resources:
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi  

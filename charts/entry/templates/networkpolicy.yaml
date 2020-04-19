@@ -1,0 +1,33 @@
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: {{ template "entry.name" . }}
+  namespace: {{ .Values.namespace | quote }}
+  labels:
+    {{- include "entry.labels" . | nindent 4 }}
+spec:
+  podSelector:
+    matchLabels:
+      app.kubernetes.io/name: {{ template "entry.name" . }}
+  policyTypes:
+    - Egress
+  egress:
+  - to:
+    - ipBlock:
+        cidr: 0.0.0.0/0
+        except:
+        - 169.254.169.254/32
+    ports:
+    - protocol: TCP
+      port: 4444
+  - to:
+    - ipBlock:
+        cidr: 10.0.2.15/32
+  - to:
+    - ipBlock:
+        cidr: {{ .Values.network.svc }}
+  - to:
+    - ipBlock:
+        cidr: {{ .Values.network.pod }}
+
+---

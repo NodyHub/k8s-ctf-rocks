@@ -1,0 +1,46 @@
+# Define tokens for the challanges
+
+## DNS zone
+DNS_ZONE="k8s.local"
+
+## API 
+DATADOG_API_KEY=""
+
+## The namespaces for the challenges
+NS1="foo"
+NS2="bar"
+
+## Hosted on AWS!?
+IAAS="Vagrant"
+
+# K3s configuration for vagrant
+POD_SUBNET="10.1.0.0/16"      # <<<---- Has to be changed in calico.yaml
+SVC_SUBNET="10.100.0.0/16"
+
+## Stored in secrets of API `kubectl get secrets -n foo entry-secret-egg -o go-template='{{ index .data "EGG" | base64decode }}'`
+EGG1="HUHU-WHAT-AN-AMAZING-K8S-SECRETS-EGG"
+
+## Hard coded in Dockerfile of image 'entry' -->> https://github.com/NodyHub/k8s-ctf-rocks/blob/master/docker-images/entry/Dockerfile#L17
+EGG2="DEFAULT-ARG-EASTER-EGG"
+
+## Hard coded in Github Actions -->> `docker pull nodyd/e20-entry && docker image history nodyd/e20-entry --no-trunc|grep /EGG | head -1 | cut -d '|' -f 2 | cut -d ' ' -f 2`
+EGG3="WHOOO-A-SECRET-GITHUB-ACTION-BUILDARG-EGG"
+
+## "hidden" on 'entry' -->> `cat cfg/config.php`
+EGG4="AMAZING-CONFIG-FILE-EGG"
+
+## Egg for env of ssh -->> `ssh -i /var/run/secrets/kubernetes.io/ssh/private_key -l user -p 6667 ssh -- cat /proc/1/environ | tr '\0' '\n'|grep 'EGG='`
+EGG5="SUPER-SECRET-ENV-EGG"
+
+## Egg for webpage -->> `ssh -p 6667 -i /run/secrets/kubernetes.io/ssh/private_key -l user ssh.foo -- curl http://egg`
+EGG6="WOOOOOOOT-AN-EGG-FROM-A-HIDDEN-WEBPAGE-EGG"
+
+## Egg from ingress `curl -H "Host: joker" http://<k8s-host>`
+EGG7="NANANA-ACCESSIBLE-ONLY-OVER-INGRESS-LOL-EGG"
+
+## Egg from other namespace -->> `curl http://honk.$NS2`
+EGG8="HONK-HONK-HONK-HONK-HONK-HONK-HONK-HONK-HONK-HONK-HONK-HONK-HONK-EGG"
+
+## Egg from Dockerfile of image 'egg' -->> https://github.com/NodyHub/k8s-ctf-rocks/blob/master/docker-images/egg/Dockerfile#L3
+EGG9="OMG-FANCY-DEFAULT-HOW-WOULD-EXPECT-THIS-EGG"
+
