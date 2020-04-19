@@ -12,7 +12,7 @@ You can start it with:
 ```bash
 vagrant up
 ```
-Even if the VM is started, the cluster needs some time to pull all images. The status of the deployment can be tested with following commands:
+Even if the VM is started, the cluster needs some time to pull all images. The status of the deployment can be checked with following commands:
 ```bash
 # Connect to vm
 vagrant ssh
