@@ -6,6 +6,11 @@
 Vagrant.configure("2") do |config|
   # define system 
   config.vm.box = "bento/ubuntu-18.04"
+  if Vagrant::Util::Platform.darwin?
+    config.vm.provider "vmware_desktop" do |v|
+      v.clone_directory = "~/Documents/Virtual\ Machines.localized/"
+    end
+  end
 
   # Copy repo
   config.vm.provision "file", 
